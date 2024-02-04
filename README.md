@@ -24,5 +24,7 @@ Its a web application developed using Python and Django
 -->cd real
 
 -->python manage.py startapp realapp
+
 -->python manage.py runserver
+
 -->now click on the link in the terminal:http://127.0.0.1:8000/
