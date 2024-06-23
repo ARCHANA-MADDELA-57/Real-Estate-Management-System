@@ -44,7 +44,7 @@
 
 **Clone the repository:**
 
---git clone https://github.com/ARCHANA-MADDELA-57/real-estate-management-system.git
+--git clone https://github.com/ARCHANA-MADDELA-57/Real-Estate-Management-System
 
 
 **Create and activate a virtual environment:**
