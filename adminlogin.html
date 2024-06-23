@@ -1,0 +1,35 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login</title>
+  <link rel='stylesheet' href="{%static 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css' %}"><link rel="stylesheet" href="{%static './style3.css' %}">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+	<div id="login-box">
+		<div class="logo">
+			<img src="{%static 'http://placehold.it/100x100?text=DD' %}" class="img img-responsive img-circle center-block"/>
+			<h1 class="logo-caption"><span class="tweak">REMS</span>Admin Login</h1>
+		</div><!-- /.logo -->
+		<form method="post" action="">
+			{%csrf_token%}
+		<div class="controls">
+			<input type="text" name="email" placeholder="Email" class="form-control" />
+			<input type="password" name="password" placeholder="Password" class="form-control" />
+			<a href="{%url 'forget_password' %}" class="link">Forgot Your Password?</a>
+			<input type="submit" value='Login'>
+		</div>
+	</form>
+	</div>
+</div>
+<div id="particles-js"></div>
+<!-- partial -->
+  <script src="{%static 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css' %}"></script>
+<script src="{%static 'https://code.jquery.com/jquery-1.11.1.min.js' %}"></script>
+<script  src="{%static './script3.js' %}"></script>
+
+</body>
+</html>

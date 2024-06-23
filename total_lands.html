@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> sell your land here</title>
+    <link rel="stylesheet" href="{%static 'admin_dashboard.css' %}">
+    <!-- Boxicons CDN Link -->
+    <link href="{%static 'https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' %}" rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <span class="logo_name">REMS</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="{%url 'admin_dashboard' %}">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="{%url 'land_types' %}">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Land types</span>
+          </a>
+        </li>
+        
+        <!--
+        <li>
+          <a href="{%static '#' %}">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Analytics</span>
+          </a>
+        </li>  -->
+        
+       
+        <li>
+            <a href="{%url 'total_users' %}">
+              <i class='bx bx-message' ></i>
+              <span class="links_name">Total Users</span>
+            </a>
+          </li>
+        <li>
+            <a href="{%url 'total_lands' %}">
+              <i class='bx bx-message' ></i>
+              <span class="links_name">Total Lands</span>
+            </a>
+          </li>
+          <li>
+            <a href="{%url 'total_sellerlands' %}">
+              <i class='bx bx-message' ></i>
+              <span class="links_name">Total Seller Lands</span>
+            </a>
+          </li>
+          <li>
+            <a href="{%url 'total_sellers' %}">
+              <i class='bx bx-message' ></i>
+              <span class="links_name">Total Sellers</span>
+            </a>
+          </li>
+        <li>
+          <a href="{%url 'complaints' %}">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Complaints</span>
+          </a>
+        </li>
+       
+        <li>
+          <a href="{%url 'add_lands' %}">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Add Lands</span>
+          </a>
+        </li>
+        <!--
+        <li>
+          <a href="{%static '#' %}">
+            <i class='bx bx-heart' ></i>
+            <span class="links_name">Favrorites</span>
+          </a>
+        </li>   -->
+        <!--<li>
+          <a href="{%static '#' %}">
+            <i class='bx bx-cog' ></i>
+            <span class="links_name">Setting</span>
+          </a>
+        </li>--->
+        <li class="log_out">
+          <a href="{%url 'signout' %}">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Sign out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Total Lands</span>
+        </div>
+        <div class="profile-details">
+          <img src="{%static 'images/images/profile.jpg' %}" alt="">
+          <span class="admin_name">REMS ADMIN </span>
+          <i class='bx bx-chevron-down' ></i>
+        </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <table border="2">
+            <tc>
+                <td>land_id</td>
+           
+                <td>survey_number</td>
+           
+                <td>land_image</td>
+           
+                <td>land_size</td>
+            
+                <td>land_price</td>
+            
+                <td>land_location</td>
+
+                <td>land_seller</td>
+
+                <td>seller_mobile</td>
+
+                <td>Action1</td>
+
+                <td>Action2</td>
+            </tc>
+            {%for x in landdetails%}
+            <tr>
+                <td>{{x.land_id}}</td>
+                <td>{{x.survey_number}}</td>
+                <td>{{x.land_image}}</td>
+                <td>{{x.land_size}}</td>
+                <td>{{x.land_price}}</td>
+                <td>{{x.land_location}}</td>
+                <td>{{x.land_seller}}</td>
+                <td>{{x.seller_mobile}}</td>
+                <td>
+                  <a href="{% url 'editland'  x.land_id%}">Edit</a>
+                </td>
+                <td>
+                  <a href="{% url 'deleteland'  x.land_id%}">Delete</a>
+              </td>
+               </tr>
+            {%endfor%}
+           
+
+        </table>
+        
+        </section>
+        </body>
+        </html>

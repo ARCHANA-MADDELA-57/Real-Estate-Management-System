@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> sell your land here</title>
+    <link rel="stylesheet" href="{%static 'admin_dashboard.css' %}">
+    <!-- Boxicons CDN Link -->
+    <link href="{%static 'https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' %}" rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <span class="logo_name">REMS</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="{%url 'admin_dashboard' %}">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="{%url 'land_types' %}">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Land types</span>
+          </a>
+        </li>
+       
+        <!--
+        <li>
+          <a href="{%static '#' %}">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Analytics</span>
+          </a>
+        </li>  -->
+        
+       
+        <li>
+            <a href="{%url 'total_users' %}">
+              <i class='bx bx-message' ></i>
+              <span class="links_name">Total Users</span>
+            </a>
+          </li>
+        <li>
+            <a href="{%url 'total_lands' %}">
+              <i class='bx bx-message' ></i>
+              <span class="links_name">Total Lands</span>
+            </a>
+          </li>
+          <li>
+            <a href="{%url 'total_sellerlands' %}">
+              <i class='bx bx-message' ></i>
+              <span class="links_name">Total Seller Lands</span>
+            </a>
+          </li>
+          <li>
+            <a href="{%url 'total_sellers' %}">
+              <i class='bx bx-message' ></i>
+              <span class="links_name">Total Sellers</span>
+            </a>
+          </li>
+        <li>
+          <a href="{%url 'complaints' %}">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Complaints</span>
+          </a>
+        </li>
+       
+        <li>
+          <a href="{%url 'add_lands' %}">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Add Lands</span>
+          </a>
+        </li>
+        <!--
+        <li>
+          <a href="{%static '#' %}">
+            <i class='bx bx-heart' ></i>
+            <span class="links_name">Favrorites</span>
+          </a>
+        </li>   -->
+        <!--<li>
+          <a href="{%static '#' %}">
+            <i class='bx bx-cog' ></i>
+            <span class="links_name">Setting</span>
+          </a>
+        </li>--->
+        <li class="log_out">
+          <a href="{%url 'signout' %}">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Sign out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Add Land</span>
+        </div>
+        <div class="profile-details">
+          <img src="{%static 'images/images/profile.jpg' %}" alt="">
+          <span class="admin_name">REMS ADMIN </span>
+          <i class='bx bx-chevron-down' ></i>
+        </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <form id="f1" method="post" enctype="multipart/form-data">
+            {%csrf_token%}
+            <h2>Land Information Form</h2>
+            <label for="survey_number">survey_number</label>
+            <input type="text" name="survey_number" id="survey_number" required><br><br>
+            <label for="land_size">Size</label>
+            <input type="text" name="land_size" id="land_size" required><br><br>
+            <label for="land_price">Price</label>
+            <input type="text" name="land_price" id="land_price" required><br><br>
+            <label for="land_location">Location</label>
+            <textarea name="land_location" id="land_location" rows="3" required></textarea><br><br>
+            <label for="land_seller">Landseller</label>
+            <input type="text" name="land_seller" id="land_seller" required><br><br>
+            <label for="seller_mobile">Sellermobile</label>
+            <input type="cell" name="seller_mobile" id="seller_mobile" required><br><br>
+            <label for="land_image">Landimage</label>
+            <input type="file" name="myfile" id="land_image" required><br><br>
+            <input type="submit" value="Submit">
+            <div class="form-field" align="center">
+            {{status}}
+            </div>
+          </form>
+          </body>
+          </html>

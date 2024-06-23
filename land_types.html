@@ -1,0 +1,196 @@
+{% load static%}
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> sell your land here </title>
+    <link rel="stylesheet" href="{%static 'admin_dashboard.css' %}">
+    <!-- Boxicons CDN Link -->
+    <link href="{%static 'https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' %}" rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <!-- Customized Bootstrap Stylesheet -->
+    <link href="{%static 'bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{%static 'style.css' %}" rel="stylesheet">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <span class="logo_name">REMS</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="{%url 'admin_dashboard' %}">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="{%url 'land_types' %}" class="active">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Land types</span>
+          </a>
+        </li>
+       
+        <!--
+        <li>
+          <a href="{%static '#' %}">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Analytics</span>
+          </a>
+        </li>  -->
+       
+       
+        <li>
+          <a href="{%url 'total_users' %}">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Total Users</span>
+          </a>
+        </li>
+        <li>
+          <a href="{%url 'total_lands' %}">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Total Lands</span>
+          </a>
+        </li>
+        <li>
+          <a href="{%url 'total_sellerlands' %}">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Total Seller Lands</span>
+          </a>
+        </li>
+        <li>
+          <a href="{%url 'total_sellers' %}">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Total Sellers</span>
+          </a>
+        </li>
+        <li>
+          <a href="{%url 'complaints' %}">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Complaints</span>
+          </a>
+        </li>
+       
+        <li>
+          <a href="{%url 'add_lands' %}">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Add Lands</span>
+          </a>
+        </li>
+        <!--
+        <li>
+          <a href="{%static '#' %}">
+            <i class='bx bx-heart' ></i>
+            <span class="links_name">Favrorites</span>
+          </a>
+        </li>   -->
+        <li>
+          <!---<a href="{%static '#' %}">
+            <i class='bx bx-cog' ></i>
+            <span class="links_name">Setting</span>
+          </a>
+        </li>--->
+        <li class="log_out">
+          <a href="{%url 'signout' %}">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Sign out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Dashboard</span>
+        </div>
+        <div class="profile-details">
+          <img src="{%static 'images/images/profile.jpg' %}" alt="">
+          <span class="admin_name">REMS ADMIN </span>
+          <i class='bx bx-chevron-down' ></i>
+        </div>
+      </nav>
+      <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
+                <h1 class="mb-5">Types of lands</h1>
+            </div>
+            <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
+                
+                <div class="tab-content">
+                    <div id="tab-1" class="tab-pane fade show p-0 active">
+                        <div class="row g-4">
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="{%static 'images/land-1.jpg' %}" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lands of 1 acre</span>
+                                            </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="{%static 'images/land-2.jpg' %}" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lands of 2 acres</span>
+                                            
+                                            </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="{%static 'images/land-3.jpg' %}" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lands of more than 2 acres</span>
+                                            
+                                           </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="{%static 'images/land-4.jpg' %}" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lands suitable for both agriculture and construction</span>
+                                            </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="{%static 'images/land-5.jpg' %}" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lands suitable only for agriculture</span>
+                                            </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="{%static 'images/land-6.jpg' %}" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lands suitable only for construction </span>
+                                            </h5>
+                                    </div>
+                                </div>
+                              </div>
+                              </div>
+                            </div>
+
+                        </div>
+              </div>
+          </div>
+        </body>
+        </html>

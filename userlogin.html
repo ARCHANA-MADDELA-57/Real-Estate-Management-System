@@ -1,0 +1,53 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Simple Login Form Example</title>
+        <link rel='stylesheet' href="{%static 'https://fonts.googleapis.com/css?family=Rubik:400,700' %}"><link rel="stylesheet" href="{%static './style1.css' %}">
+
+        <script type="text/javascript">
+            function func1()
+            {
+              var username=document.getElementById("username").value;
+              if(username==""){
+                alert("Please enter username");
+                return false;
+              }
+              var p=document.getElementById("password").value;
+              if(p==""){
+                alert("Please enter password");
+                return false;
+              }
+            }
+        </script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="login-form">
+  <form method="post">
+    {%csrf_token%}
+    <h1>Buyer Login</h1>
+    <div class="content">
+      <div class="input-field">
+        <input type="email" name='email' placeholder="Email" autocomplete="nope">
+      </div>
+      <div class="input-field">
+        <input type="password" name='pwd' placeholder="Password" autocomplete="new-password">
+      </div>
+      <a href="{%url 'forget_password' %}" class="link">Forgot Your Password?</a>
+    </div>
+    <div class="action">
+        <a href="{% url 'registration' %}" class="link" align="center">Register</a>
+        <input type="submit" value='Login'>
+        </td>
+    </div>
+  </form>
+</div>
+<!-- partial -->
+  <script  src="{%static './script1.js'}"></script>
+
+</body>
+</html>
+
+    

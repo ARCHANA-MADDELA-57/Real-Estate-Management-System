@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> sell your land here</title>
+    <link rel="stylesheet" href="{%static 'admin_dashboard.css' %}">
+    <!-- Boxicons CDN Link -->
+    <link href="{%static 'https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' %}" rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <span class="logo_name">REMS</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="{%url 'admin_dashboard' %}">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="{%url 'land_types' %}">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Land types</span>
+          </a>
+        </li>
+        
+        <!--
+        <li>
+          <a href="{%static '#' %}">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Analytics</span>
+          </a>
+        </li>  -->
+        
+        
+        <li>
+            <a href="{%url 'total_users' %}">
+              <i class='bx bx-message' ></i>
+              <span class="links_name">Total Users</span>
+            </a>
+          </li>
+        <li>
+            <a href="{%url 'total_lands' %}">
+              <i class='bx bx-message' ></i>
+              <span class="links_name">Total Lands</span>
+            </a>
+        </li>
+        <li>
+          <a href="{%url 'total_sellerlands' %}">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Total Seller Lands</span>
+          </a>
+        </li>
+        <li>
+            <a href="{%url 'total_sellers' %}">
+              <i class='bx bx-message' ></i>
+              <span class="links_name">Total Sellers</span>
+            </a>
+        </li>
+
+        <li>
+          <a href="{%url 'complaints' %}">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Complaints</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="{%url 'add_lands' %}">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Add Lands</span>
+          </a>
+        </li>
+        <!--
+        <li>
+          <a href="{%static '#' %}">
+            <i class='bx bx-heart' ></i>
+            <span class="links_name">Favrorites</span>
+          </a>
+        </li>   -->
+        <!--<li>
+          <a href="{%static '#' %}">
+            <i class='bx bx-cog' ></i>
+            <span class="links_name">Setting</span>
+          </a>
+        </li>--->
+        <li class="log_out">
+          <a href="{%url 'signout' %}">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Sign out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Total Sellers</span>
+        </div>
+        <div class="profile-details">
+          <img src="{%static 'images/images/profile.jpg' %}" alt="">
+          <span class="admin_name">REMS ADMIN </span>
+          <i class='bx bx-chevron-down' ></i>
+        </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <table border="2">
+            <tc>
+                <td>seller_id</td>
+            
+            
+                <td>Name</td>
+            
+           
+                <td>Email</td>
+            
+           
+                <td>Gender</td>
+            
+                <td>Dob</td>
+
+                <td>Mobile</td>
+
+                <td>City</td>
+
+                <td>Password</td>
+          
+                <td>Action1</td>
+
+                <td>Action2</td>
+            </tc>
+            {%for x in sellerdetails%}
+            <tr>
+                <td>{{x.seller_id}}</td>
+                <td>{{x.Name}}</td>
+                <td>{{x.Email}}</td>
+                <td>{{x.Gender}}</td>
+                <td>{{x.Dob}}</td>
+                <td>{{x.Mobile}}</td>
+                <td>{{x.City}}</td>
+                <td>{{x.Password}}</td>
+                <td>
+                  <a href="{% url 'editseller'  x.sellerid%}">Edit</a>
+                </td>
+                <td>
+                  <a href="{% url 'deleteseller'  x.sellerid%}">Delete</a>
+                </td>
+               </tr>
+            {%endfor%}
+
+        </table>
+       
+        </section>
+        </body>
+        </html>

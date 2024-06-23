@@ -1,0 +1,69 @@
+{%load static%}
+<html>
+<head>
+<title>Register</title>
+
+</head>
+<body>
+<form id="f1" action="" method="POST">
+   
+    {%csrf_token%}
+   
+           <table align="center" border="1">
+            <tr>
+                <td colspan="2" align="center"><h3>Edit Seller</h3></td>
+            </tr>
+            <tr>
+                <td style="color:red;font-size:20px;font-weight:bold;">Name</td>
+                <td><input type='text' id='Name' name='Name' placeholder="{{seller.Name}}"/></td>
+            </tr>
+            <tr>
+                <td class="mystyle">Email</td>
+                <td><input type='text' id='Email' name='Email' placeholder="{{seller.Email}}"/></td>
+            </tr> 
+           
+            <tr>
+                <td class="external">Dob</td>
+                <td><input type='text'  id='Dob' name='Dob' placeholder="{{seller.Dob}}"/></td>
+            </tr> 
+            <tr>
+                <td class="external">Gender</td>
+                <td><input type='text'  id='Gender' name='Gender' placeholder="{{seller.Gender}}"/></td>
+            </tr> 
+            <tr>
+                <td class="mystyle">Mobile</td>
+                <td>
+                    <textarea id="Mobile" name="Mobile" rows="5" placeholder="{{seller.Mobile}}"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="mystyle">City</td>
+                <td>
+                    <textarea id="City" name="City" rows="5" placeholder="{{seller.City}}"></textarea>
+                </td>
+            </tr> 
+            <tr>
+                <td class="mystyle">Password</td>
+                <td>
+                    <textarea id="Password" name="Password" rows="5" placeholder="{{seller.Password}}"></textarea>
+                </td>
+            </tr> 
+            <tr>
+            
+                <td align="center">
+                       <input type="submit" id="submit" name="submit" onclick="return validate()" value="Update">                    
+                </td>
+                <td align="center">
+                       <input type="button" id="clear" name="clear" value="Clear">                    
+                </td>
+            </tr>
+            
+           </table>
+           <input type="text" id="selectedgender" name="selectedgender" style="display:none ;"/>
+           {% if status != None %}
+           <p>{{status}}</p>
+           {% endif %}
+           
+        </form>
+</body>
+</html>

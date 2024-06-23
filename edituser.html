@@ -1,0 +1,56 @@
+{%load static%}
+<html>
+<head>
+<title>Register</title>
+
+</head>
+<body>
+<form id="f1" action="" method="POST">
+   
+    {%csrf_token%}
+   
+           <table align="center" border="1">
+            <tr>
+                <td colspan="2" align="center"><h3>Edit User</h3></td>
+            </tr>
+            <tr>
+                <td style="color:red;font-size:20px;font-weight:bold;">Username</td>
+                <td><input type='text' id='username' name='username' placeholder="{{user.username}}"/></td>
+            </tr>
+            <tr>
+                <td class="mystyle">Password</td>
+                <td><input type='text' id='password' name='password' placeholder="{{user.password}}"/></td>
+            </tr> 
+           
+            <tr>
+                <td class="external">Email</td>
+                <td><input type='text'  id='email' name='email' placeholder="{{user.email}}"/></td>
+            </tr> 
+            
+            <tr>
+                <td class="mystyle">Mobile</td>
+                <td>
+                    <textarea id="mobile" name="mobile" rows="5" placeholder="{{user.mobile}}"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="mystyle">Address</td>
+                <td>
+                    <textarea id="address" name="address" rows="5" placeholder="{{user.address}}"></textarea>
+                </td>
+            </tr> 
+            <tr>
+            
+                <td align="center">
+                       <input type="submit" id="submit" name="submit" onclick="return validate()" value="Update">                    
+                </td>
+                <td align="center">
+                       <input type="button" id="clear" name="clear" value="Clear">                    
+                </td>
+            </tr>
+            
+           </table>
+           
+        </form>
+</body>
+</html>

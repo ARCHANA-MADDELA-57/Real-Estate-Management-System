@@ -1,0 +1,99 @@
+{%load static %}
+<DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width,initial-scale=1.0">
+            <link href="{% static 'registration.css' %}" rel="stylesheet" />
+            <script type="text/javascript">
+                function func1(){
+                    var username=document.getElementById("username").value;
+                    if(username==""){
+                        alert("please enter username");
+                        return false;
+                    }
+                    var password=document.getElementById("password").value;
+                    if(password==""){
+                        alert("please enter password");
+                        return false;
+                    }
+                    var cpwd=document.getElementById("cpwd").value;
+                    if(cpwd==""){
+                        alert("please enter confirm password");
+                        return false;
+                    }
+                    if(password!=cpwd){
+                        alert("password and confirm password are not same");
+                        return false;
+                    }
+                    var email=document.getElementById("email").value;
+                    if(email==""){
+                        alert("please enter email");
+                        return false;
+                    }
+                    
+                    return true;
+                }
+            
+            </script>
+        </head>
+        <body>
+            <form id="f1" method="POST" action="registration">
+                {% csrf_token %}
+                <table  border="2" align="center">
+                    <tr>
+                        <td  colspan="2" style="color:rgb(212, 209, 209);background-color: rgb(23, 14, 2);" align="center">Buyer  Registration page</td>
+                    </tr>
+                    <tr>
+                        <td class = "mystyle" >Username</td>
+                        <td><input type="text" id="username" name="username" required></td>
+                    </tr>
+                    <tr>
+                        <td class = "mystyle">Password</td>
+                        <td><input type="Password" id="password" name="password" required></td>
+                    </tr>
+                    <tr>
+                        <td class = "mystyle">Confirm Password</td>
+                        <td><input type="Password" id="cpwd" name="cpwd" required></td>
+                    </tr>
+                    <tr>
+                        <td class = "mystyle">Email</td>
+                        <td><input type="email" id="email" name="email" required></td>
+                    </tr>
+                        <tr>
+                            <td class = "mystyle">Mobile</td>
+                            <td><input type="mobile" id="mobile" name="mobile" required></td>
+                        </tr>
+                        
+                    <tr>
+                        <td class = "mystyle">Address</td>
+                        <td><textarea id="address" name="address" rows="5" cols="20" required></textarea></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><input type="submit" onclick="func1()" id="submit" name="submit" value="submit"></td>
+                        <td><input type="submit" id="clear" name="clear" value="clear"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                              <a href="{% url 'userlogin' %}">Already a user? Signin</a>
+                        </td>
+                    </tr>
+                    <script>
+                        const addform = document.getElementById("form-validation");
+                        addform.addEventListener("submit",(e)=>
+                        {
+                            if(addform.checkvalidity() === false)
+                            {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                addform.classList.add('was-validated');
+                                return false;
+                            }
+                        })
+                        </script>
+                </table>
+                
+            </form>
+        </body>
+    </html>

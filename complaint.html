@@ -1,0 +1,216 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ 
+     <!-- Site Metas -->
+    <title>CITY Real Estate - Responsive HTML5 Landing Page Template</title>  
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link  href="{% static 'images/favicon.ico' %}" rel="shortcut icon" type="image/x-icon" />
+    <link href="{% static 'images/apple-touch-icon.png' %}" rel="apple-touch-icon" >
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- Colors CSS -->
+    <link rel="stylesheet" href="{% static 'css/colors.css' %}">
+    <!-- ALL VERSION CSS -->
+    <link rel="stylesheet" href="{% static 'css/versions.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css'%}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+    <!-- Modernizer for Portfolio -->
+    <script src="{%static 'js/modernizer.js' %}"></script>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="realestate_version">
+    
+    <!-- LOADER -->
+    <div id="preloader">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div><!-- end loader -->
+    <!-- END LOADER -->
+
+    <header class="header header_style_01">
+        <nav class="megamenu navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{%static 'index.html' %}"><img src="{%static 'images/logos/logo.png' %}" alt="image"></a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{%url 'index' %}">Home</a></li>
+                        <li><a href="{%url 'about' %}">About us </a></li>
+                        <li><a href="{%url 'service' %}">Service</a></li>
+                        <li><a href="{%url 'properties' %}">Lands</a></li>
+                        <li><a href="{%url 'contact' %}">Contact</a></li>
+                        <li><a class="active" href="{%url 'complaint' %}">Complaint</a></li>
+                        <li><a href="{%url 'logoff' %}">Log off</a></li>
+                        <li class="social-links"><a href="{%static '#' %}"><i class="fa fa-twitter global-radius"></i></a></li>
+                        <li class="social-links"><a href="{%static '#' %}"><i class="fa fa-facebook global-radius"></i></a></li>
+                        <li class="social-links"><a href="{%static '#' %}"><i class="fa fa-linkedin global-radius"></i></a></li>
+						<li class="search-option">
+							<button class="search tran3s dropdown-toggle" id="searchDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search" aria-hidden="true"></i></button>
+							<form action="#" class="p-color-bg dropdown-menu tran3s" aria-labelledby="searchDropdown">
+								<input type="text" placeholder="Search....">
+								<button class="p-color-bg"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</form>
+					   </li> 
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+	
+	<div class="all-title-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Complaint</h2>
+					<!-- Breadcrumbs -->
+					<nav id="breadcrumbs">
+						<ul>
+							<li><a href="{%static '#' %}">Home</a></li>
+							<li>Complaint</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="about-box">
+		<div class="container">
+			<div class="section-title row text-center">
+                <div class="col-md-8 col-md-offset-2">
+                    <h3>COMPLAINT FORM</h3>
+                
+                    <form id="f1" method="post" enctype="multipart/form-data">
+                    {%csrf_token%}
+                        <fieldset id="fs-frm-inputs">
+                          <label for="full-name">Full_Name</label>
+                          <input type="text" name="Full_Name" id="full-name" placeholder="First and Last" required="" fdprocessedid="cy0ldpm">
+                          <label for="email-address">Email_Address</label>
+                          <input type="email" name="Email_Address" id="email-address" placeholder="email" required="" fdprocessedid="p1u9tq">
+                          <label for="telephone">Telephone_Number</label>
+                          <input type="telephone" name="Telephone_Number" id="telephone" placeholder="phone number" fdprocessedid="o1izuc" required="">
+                          <label for="complaint">Complaint</label>
+                          <textarea rows="6" name="Complaint" id="complaint" placeholder="complaint" required=""></textarea>
+                        </fieldset>
+                        <input type="submit" value="File Complaint" fdprocessedid="whgqx">
+                        {{status}}
+                      </form>   
+                </div><!-- end col -->
+            </div><!-- end title -->
+	
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <img src="{%static 'images/logos/logo-realestate.png' %}" alt="">
+                        </div>
+                        <p></p>
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3>Info Link</h3>
+                        </div>
+
+                        <ul class="twitter-widget footer-links">
+                            <li><a href="{%static '#' %}"> Home </a></li>
+                            <li><a href="{%static '#' %}"> About Us </a></li>
+                            <li><a href="{%static '#' %}"> Services</a></li>
+							<li><a href="{%static '#' %}"> Gallery</a></li>
+							<li><a href="{%static '#' %}"> Properties</a></li>
+							<li><a href="{%static '#' %}"> Contact</a></li>
+                        </ul><!-- end links -->
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+				
+				<div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3>Contact Details</h3>
+                        </div>
+
+                        <ul class="footer-links">
+                            <li><a href="{%static 'mailto:#' %}">archanaarchu5757@gmail.com</a></li>
+                            <li><a href="{%static '#' %}">www.mysite.com</a></li>
+                            <li>Laxmipur,Gouravelli,Husnabad</li>
+                            <li>+91 7675899571</li>
+                        </ul><!-- end links -->
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+				
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3>Social</h3>
+                        </div>
+                        <ul class="footer-links">
+                            <li><a href="{%static '#' %}"><i class="fa fa-facebook"></i> Facebook</a></li>
+                            <li><a href="{%static '#' %}"><i class="fa fa-twitter"></i> Twitter</a></li>
+                            <li><a href="{%static '#' %}"><i class="fa fa-pinterest"></i> Pinterest</a></li>
+                        </ul><!-- end links -->
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+				
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </footer><!-- end footer -->
+
+    <div class="copyrights">
+        <div class="container">
+            <div class="footer-distributed">
+                <div class="footer-left">
+                    <p class="footer-company-name">All Rights Reserved. &copy; 2023 <a href="#">City Real Estate</a> Design By : <a href="https://html.design/">Archana</a></p>
+                </div>
+
+               
+            </div>
+        </div><!-- end container -->
+    </div><!-- end copyrights -->
+
+    <a href="{%static '#' %}" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+    <!-- ALL JS FILES -->
+    <script src="{%static 'js/all.js' %}"></script>
+    <!-- ALL PLUGINS -->
+    <script src="{%static 'js/custom.js' %}"></script>
+    <script src="{%static 'js/portfolio.js' %}"></script>
+    <script src="{%static 'js/hoverdir.js' %}"></script>    
+    <script src="{%static 'http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places' %}"></script>
+   <!-- MAP & CONTACT -->
+    <script src="{%static 'js/map.js' %}"></script>
+
+</body>
+</html>

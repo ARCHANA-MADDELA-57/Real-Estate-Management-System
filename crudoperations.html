@@ -1,0 +1,26 @@
+{%load static%}
+<html>
+<head>
+<title>Crud Operations</title>
+</head>
+<body>
+<form id="f1" action="" method="POST">   
+    {%csrf_token%}
+    <table border="2">
+            
+        {%for x in userdetails%}
+         <tr>
+             <td>{{x.userid}}</td>
+             <td>{{x.username}}</td>
+             <td>{{x.password}}</td>
+             <td>{{x.email}}</td>
+             <td>{{x.mobile}}</td>
+             <td>{{x.address}}</td>
+             
+            </tr>
+         {%endfor%}
+     </table>
+           
+</form>
+</body>
+</html>

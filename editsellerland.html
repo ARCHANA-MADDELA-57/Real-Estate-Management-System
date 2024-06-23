@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title> sell your land here</title>
+</head>
+<body>
+    <form id="f1" action="" method="POST">
+       
+        {%csrf_token%}
+       
+               <table align="center" border="1">
+                <tr>
+                    <td colspan="2" align="center"><h3>Edit Seller Land</h3></td>
+                </tr>
+                <tr>
+                    <td style="color:red;font-size:20px;font-weight:bold;">Land Name</td>
+                    <td><input type='text' id='land_name' name='land_name' placeholder="{{sellerland.land_name}}"/></td>
+                </tr>
+                
+               
+                <tr>
+                    <td class="external">Land Size</td>
+                    <td><input type='text'  id='land_size' name='land_size' placeholder="{{sellerland.land_size}}"/></td>
+                </tr>
+                <tr>
+                    <td class="external">Land Price</td>
+                    <td><input type='text'  id='land_price' name='land_price' placeholder="{{sellerland.land_price}}"/></td>
+                </tr> 
+                <tr>
+                    <td class="mystyle">Land Location</td>
+                    <td>
+                        <textarea id="land_location" name="address" rows="5" placeholder="{{sellerland.land_location}}"></textarea>
+                    </td>
+                </tr> 
+                <tr>
+                    <td class="external">Land Seller</td>
+                    <td><input type='text'  id='land_seller' name='land_seller' placeholder="{{sellerland.land_seller}}"/></td>
+                </tr> 
+                <tr>
+                    <td class="mystyle">Seller Mobile</td>
+                    <td>
+                        <textarea id="mobile" name="seller_mobile" rows="5" placeholder="{{sellerland.seller_mobile}}"></textarea>
+                    </td>
+                </tr>
+                 <tr>
+                    <td class="mystyle">Land Image</td>
+                    <td><input type='text' id='land_image' name='land_image' placeholder="{{sellerland.land_image}}"/></td>
+                </tr>
+                <tr>
+                
+                    <td align="center">
+                           <input type="submit" id="submit" name="submit" onclick="return validate()" value="Update">                    
+                    </td>
+                    <td align="center">
+                           <input type="button" id="clear" name="clear" value="Clear">                    
+                    </td>
+                </tr>
+                
+               </table>
+               
+            </form>
+    </body>
+    </html>
