@@ -1,30 +1,92 @@
-# Real-Estate-Management-System
-Its a web application developed using Python and Django
+**Table of Contents**
 
-1)Move the project folder to the drive.
+1.Introduction
 
-2)open xampp and start apache and mysql.
+2.Features
 
-3)Open the localhost in browser and go to phpmyadmin,then click on import and give the name database as realestate and select our project database from floder.
+3.Tech Stack
 
-4)Then open the project folder with visual studio code.
+4.Installation
 
-5)open ther Terminal.
+5.Usage
 
-6)Now enter the following commands in terminal.
+6.Contact
 
--->pip install django
+**Introduction**
 
--->mkvirtualenv env
+-- The Real Estate Management System is a web application designed to facilitate the management of real estate properties. It allows users to list, search, and manage properties efficiently.
 
--->pip install mysql-connector 
+**Features**
 
--->django-admin startproject real
+--User authentication and authorization
 
--->cd real
+--Property listing management
 
--->python manage.py startapp realapp
+--Advanced property search functionality
 
--->python manage.py runserver
+--Property detail view
 
--->now click on the link in the terminal:http://127.0.0.1:8000/
+--Admin dashboard
+
+--Responsive design
+
+**Tech Stack**
+
+--Frontend: HTML, CSS, JavaScript
+
+--Backend: Python, Django
+
+--Database: Mango DB
+
+**Installation**
+
+**Steps**
+
+**Clone the repository:**
+
+--git clone https://github.com/ARCHANA-MADDELA-57/real-estate-management-system.git
+
+
+**Create and activate a virtual environment:**
+
+--python -m venv env
+
+--source env/bin/activate  # On Windows, use `env\Scripts\activate`
+
+**Install dependencies:**
+
+--pip install -r requirements.txt
+
+**Apply migrations:**
+
+--python manage.py migrate
+
+**Create a superuser:**
+
+--python manage.py createsuperuser
+
+**Run the development server:**
+
+--python manage.py runserver
+
+**Usage**
+
+--Open your web browser and navigate to http://127.0.0.1:8000.
+
+--Log in with the superuser credentials you created.
+
+--Start managing your real estate properties.
+
+**Running Tests**
+
+--To run tests, execute the following command:
+
+--python manage.py test
+
+**Contact**
+
+--If you have any questions, feel free to reach out:
+
+--Mail id: archanaarchu5757@gmail.com
+
+--GitHub: ARCHANA-MADDELA-57
